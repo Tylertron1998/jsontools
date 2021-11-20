@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonTools", "JsonTools\JsonTools.csproj", "{4EBA7B74-946C-43CD-A55D-42C2398A3319}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4EBA7B74-946C-43CD-A55D-42C2398A3319}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EBA7B74-946C-43CD-A55D-42C2398A3319}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EBA7B74-946C-43CD-A55D-42C2398A3319}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EBA7B74-946C-43CD-A55D-42C2398A3319}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
