@@ -1,4 +1,4 @@
-name: .NET
+name: CD
 
 on:
   push:
@@ -23,12 +23,16 @@ jobs:
       run: dotnet publish -c Release -r osx-x64 -o linux --self-contained true -p:PublishReadyToRun=true -p:PublishSingleFile=true -p:PublishTrimmed=true
     - name: Publish Linux
       run: dotnet publish -c Release -r linux-x64 -o osx --self-contained true -p:PublishReadyToRun=true -p:PublishSingleFile=true -p:PublishTrimmed=true
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        files: **/JsonTools.*
     - name: Rename Artifacts
       run: |
-        mv win/JsonTools.exe dist/win/JsonTools.win.dll
+        mv win/JsonTools.exe dist/JsonTools.exe
         mv linux/JsonTools dist/JsonTools.linux.dll
         mv osx/JsonTools dist/JsonTools.osx.dll
-    - name: Upload Artifacts
+    - name: Publish Artifacts
       uses: softprops/action-gh-release@v1
       with:
         files: |
