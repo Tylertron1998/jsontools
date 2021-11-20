@@ -29,8 +29,11 @@ jobs:
         mv linux/JsonTools dist/JsonTools.linux.dll
         mv osx/JsonTools dist/JsonTools.osx.dll
     - name: Publish Artifacts
-      uses: softprops/action-gh-release@v1
+      uses: "marvinpinto/action-automatic-releases@latest"
       with:
+        title: "Latest Build"
+        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        automatic_release_tag: "latest"
         files: |
           dist/JsonTools.win.dll
           dist/JsonTools.linux.dll
