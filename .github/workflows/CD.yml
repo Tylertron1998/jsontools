@@ -3,8 +3,6 @@ name: CD
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
 
 jobs:
   build:
@@ -23,16 +21,9 @@ jobs:
       run: dotnet publish -c Release -r osx-x64 -o linux --self-contained true -p:PublishReadyToRun=true -p:PublishSingleFile=true -p:PublishTrimmed=true
     - name: Publish Linux
       run: dotnet publish -c Release -r linux-x64 -o osx --self-contained true -p:PublishReadyToRun=true -p:PublishSingleFile=true -p:PublishTrimmed=true
-    - name: Upload Artifacts
-      uses: actions/upload-artifact@v2
-      with:
-        name: build-output
-        path: |
-          win/JsonTools.exe
-          linux/JsonTools
-          osx/JsonTools
     - name: Rename Artifacts
       run: |
+        mkdir dist
         mv win/JsonTools.exe dist/JsonTools.exe
         mv linux/JsonTools dist/JsonTools.linux.dll
         mv osx/JsonTools dist/JsonTools.osx.dll
