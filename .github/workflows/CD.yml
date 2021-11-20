@@ -35,7 +35,7 @@ jobs:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
         automatic_release_tag: "latest"
         files: |
-          dist/JsonTools.win.exe
+          dist/JsonTools.exe
           dist/JsonTools.linux.dll
           dist/JsonTools.osx.dll
 
