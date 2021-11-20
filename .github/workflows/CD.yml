@@ -26,7 +26,7 @@ jobs:
     - name: Upload Artifacts
       uses: actions/upload-artifact@v2
       with:
-        files: **/JsonTools.*
+        path: **/JsonTools.*
     - name: Rename Artifacts
       run: |
         mv win/JsonTools.exe dist/JsonTools.exe
